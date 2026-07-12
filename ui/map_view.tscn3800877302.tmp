@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://cqkme5hrev2l2"]
+
+[ext_resource type="Texture2D" uid="uid://bq22rqc5w6poy" path="res://assets/PaperUiStuff - Copy/PaperUiPanelCartoony.png" id="1_dbqh1"]
+[ext_resource type="Script" uid="uid://dojd7vxrte3yx" path="res://ui/map_view.gd" id="1_xexuf"]
+[ext_resource type="PackedScene" uid="uid://detoo5iod05hy" path="res://ui/path_node.tscn" id="2_ci485"]
+[ext_resource type="Shader" uid="uid://er4864q7o4d4" path="res://ui/progress_bar.gdshader" id="4_uafov"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6f7x7"]
+shader = ExtResource("4_uafov")
+shader_parameter/bg_color = Color(0.2, 0.2, 0.25, 1)
+shader_parameter/progress_color_right = Color(0.92880756, 0.21223062, 0.21317187, 1)
+shader_parameter/progress_color_left = Color(1, 0.62583494, 0.2417573, 1)
+shader_parameter/A = 0.470000022325
+shader_parameter/B = 0.450000021375
+shader_parameter/C = 0.310000014725
+shader_parameter/D = 0.2630000124925
+shader_parameter/right_ratio = 0.30000001425
+shader_parameter/left_ratio = 1.0
+shader_parameter/edge_softness = 0.0050000002375
+shader_parameter/rect_size = Vector2(256, 256)
+shader_parameter/pixel_size = 29.3690013475275
+
+[node name="MapView" type="Node2D" unique_id=854698519]
+script = ExtResource("1_xexuf")
+map_node = ExtResource("2_ci485")
+
+[node name="PaperUiPanelCartoony" type="Sprite2D" parent="." unique_id=303901352]
+z_index = 10
+position = Vector2(576, 648)
+scale = Vector2(4, 4)
+texture = ExtResource("1_dbqh1")
+offset = Vector2(0, 69.5)
+
+[node name="Timer" type="Timer" parent="." unique_id=1341245084]
+one_shot = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=245453187]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 27.0
+offset_top = 221.0
+offset_right = 67.0
+offset_bottom = 261.0
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1955002293]
+
+[node name="BufWheel" type="ColorRect" parent="CanvasLayer" unique_id=300327995]
+top_level = true
+z_index = 200
+material = SubResource("ShaderMaterial_6f7x7")
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -320.0
+offset_top = -320.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

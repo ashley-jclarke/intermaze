@@ -1,0 +1,33 @@
+[gd_resource type="Theme" format=3 uid="uid://ci7pkh4xqqkvd"]
+
+[ext_resource type="FontFile" uid="uid://dijgidn8stsvt" path="res://assets/alagard/alagard.ttf" id="1_wcbto"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wcbto"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 3
+border_color = Color(1.3588953, 1.3588953, 1.3588953, 0.41960785)
+corner_detail = 18
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o6iwa"]
+bg_color = Color(0, 0, 0, 0.16862746)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0e3tn"]
+bg_color = Color(0.61960787, 0.22352941, 0.22352941, 1)
+
+[resource]
+default_font = ExtResource("1_wcbto")
+Button/font_sizes/font_size = 45
+Button/styles/normal = SubResource("StyleBoxFlat_wcbto")
+Label/font_sizes/font_size = 24
+LineEdit/font_sizes/font_size = 36
+ProgressBar/styles/background = SubResource("StyleBoxFlat_o6iwa")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_0e3tn")
+TabContainer/font_sizes/font_size = 31

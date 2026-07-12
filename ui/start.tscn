@@ -1,0 +1,150 @@
+[gd_scene format=3 uid="uid://cnt6q1p636py4"]
+
+[ext_resource type="Script" uid="uid://b6iqxon6dke6p" path="res://ui/start.gd" id="1_hyusg"]
+[ext_resource type="PackedScene" uid="uid://c8jbtjbdoq2c2" path="res://rooms/room_1.tscn" id="2_ekiae"]
+
+[node name="Start" type="Control" unique_id=435757922]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hyusg")
+lobby = ExtResource("2_ekiae")
+
+[node name="TabBar" type="TabContainer" parent="." unique_id=676954023]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 538.0
+grow_horizontal = 2
+grow_vertical = 2
+current_tab = 0
+
+[node name="Host" type="Panel" parent="TabBar" unique_id=656851219]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Host" type="Button" parent="TabBar/Host" unique_id=1800246477]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.47900003
+anchor_top = 0.354
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 103.89398
+offset_top = 30.582
+offset_right = -61.851013
+offset_bottom = -261.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Start"
+
+[node name="Local" type="Button" parent="TabBar/Host" unique_id=597619944]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.47900003
+anchor_top = 0.354
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -71.10602
+offset_top = 148.582
+offset_right = -236.85101
+offset_bottom = -143.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Start Local"
+
+[node name="LineEdit" type="LineEdit" parent="TabBar/Host" unique_id=494756076]
+layout_mode = 0
+offset_left = 131.0
+offset_top = 182.0
+offset_right = 298.0
+offset_bottom = 276.0
+text = "8910"
+placeholder_text = "Port"
+alignment = 1
+max_length = 7
+
+[node name="Path Size" type="LineEdit" parent="TabBar/Host" unique_id=1073734301]
+layout_mode = 0
+offset_left = 254.0
+offset_top = 54.0
+offset_right = 421.0
+offset_bottom = 148.0
+placeholder_text = "Path Size"
+alignment = 1
+max_length = 7
+
+[node name="Join" type="Panel" parent="TabBar" unique_id=1739614608]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="IP" type="LineEdit" parent="TabBar/Join" unique_id=1250427204]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 69.0
+offset_right = 250.0
+offset_bottom = 156.0
+text = "127.0.0.1"
+placeholder_text = "Host IP"
+alignment = 1
+max_length = 16
+
+[node name="Port" type="LineEdit" parent="TabBar/Join" unique_id=304887608]
+layout_mode = 0
+offset_left = 118.0
+offset_top = 177.0
+offset_right = 303.0
+offset_bottom = 281.0
+text = "8910"
+placeholder_text = "Port"
+alignment = 1
+max_length = 7
+
+[node name="Join" type="Button" parent="TabBar/Join" unique_id=200446451]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -239.0
+offset_top = -197.5
+offset_right = -66.0
+offset_bottom = -88.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "Join!"
+
+[node name="Panel" type="Panel" parent="." unique_id=1031199373]
+layout_mode = 0
+offset_right = 538.0
+offset_bottom = 648.0
+
+[node name="LineEdit" type="LineEdit" parent="Panel" unique_id=444702803]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 45.0
+offset_right = 347.0
+offset_bottom = 110.0
+placeholder_text = "Name"
+alignment = 1
+max_length = 12
+
+[node name="CheckButton" type="CheckButton" parent="Panel" unique_id=1381363327]
+layout_mode = 0
+offset_left = 97.0
+offset_top = 127.0
+offset_right = 453.0
+offset_bottom = 177.0
+button_pressed = true
+text = "Use controller"
+
+[connection signal="pressed" from="TabBar/Host/Host" to="." method="_on_host_pressed"]
+[connection signal="pressed" from="TabBar/Host/Local" to="." method="_on_local_pressed"]
+[connection signal="pressed" from="TabBar/Join/Join" to="." method="_on_join_pressed"]
+[connection signal="text_changed" from="Panel/LineEdit" to="." method="_on_line_edit_text_changed"]

@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://detoo5iod05hy"]
+
+[ext_resource type="Script" uid="uid://co8hs0cnh0b1w" path="res://ui/path_node.gd" id="1_6xkk2"]
+[ext_resource type="FontFile" uid="uid://2d11autvk82s" path="res://assets/Minecraft.ttf" id="2_mwm62"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6xkk2"]
+
+[node name="PathNode" type="Panel" unique_id=390860041]
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxEmpty_6xkk2")
+script = ExtResource("1_6xkk2")
+
+[node name="Label" type="Label" parent="." unique_id=251090743]
+top_level = true
+z_index = 30
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1146.0
+offset_bottom = -640.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.15294118)
+theme_override_fonts/font = ExtResource("2_mwm62")
+theme_override_font_sizes/font_size = 8
+text = "#"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Timer" type="Timer" parent="." unique_id=1194562874]
+wait_time = 0.8
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

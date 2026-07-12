@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://cqkme5hrev2l2"]
+
+[ext_resource type="Texture2D" uid="uid://bq22rqc5w6poy" path="res://assets/PaperUiStuff - Copy/PaperUiPanelCartoony.png" id="1_dbqh1"]
+[ext_resource type="Script" uid="uid://dojd7vxrte3yx" path="res://ui/map_view.gd" id="1_xexuf"]
+[ext_resource type="PackedScene" uid="uid://detoo5iod05hy" path="res://ui/path_node.tscn" id="2_ci485"]
+[ext_resource type="Texture2D" uid="uid://dqni45jp8e174" path="res://assets/circles/background_24.png" id="4_47deb"]
+[ext_resource type="Texture2D" uid="uid://l42kws1e400k" path="res://assets/circles/left_24_semi.png" id="5_it00o"]
+[ext_resource type="Texture2D" uid="uid://qfd2m4djn5r1" path="res://assets/circles/right_24_semi.png" id="6_8h55f"]
+[ext_resource type="Texture2D" uid="uid://dkdim8ewkdf5m" path="res://assets/circles/outer_full_24.png" id="7_it00o"]
+[ext_resource type="Texture2D" uid="uid://dtsv6q2aho2qv" path="res://assets/circles/center_full_24.png" id="8_8h55f"]
+
+[node name="MapView" type="Node2D" unique_id=854698519]
+script = ExtResource("1_xexuf")
+map_node = ExtResource("2_ci485")
+
+[node name="PaperUiPanelCartoony" type="Sprite2D" parent="." unique_id=303901352]
+z_index = 10
+position = Vector2(576, 648)
+scale = Vector2(4, 4)
+texture = ExtResource("1_dbqh1")
+offset = Vector2(0, 69.5)
+
+[node name="Timer" type="Timer" parent="." unique_id=1341245084]
+one_shot = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=245453187]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 27.0
+offset_top = 221.0
+offset_right = 67.0
+offset_bottom = 261.0
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1955002293]
+
+[node name="BufWheel" type="TextureProgressBar" parent="CanvasLayer" unique_id=1304559108]
+offset_left = 945.00006
+offset_top = 450.0
+offset_right = 969.00006
+offset_bottom = 474.0
+scale = Vector2(4, 4)
+value = 40.0
+fill_mode = 4
+radial_initial_angle = 180.0
+radial_fill_degrees = 180.0
+texture_under = ExtResource("4_47deb")
+texture_progress = ExtResource("5_it00o")
+
+[node name="BufWheel2" type="TextureProgressBar" parent="CanvasLayer" unique_id=1638929451]
+offset_left = 945.0
+offset_top = 450.0
+offset_right = 973.48047
+offset_bottom = 479.90002
+scale = Vector2(4, 4)
+value = 100.0
+fill_mode = 5
+radial_initial_angle = 180.0
+radial_fill_degrees = 56.6
+texture_progress = ExtResource("6_8h55f")
+
+[node name="BufWheel3" type="TextureProgressBar" parent="CanvasLayer" unique_id=1275697279]
+offset_left = 945.0
+offset_top = 450.0
+offset_right = 969.0
+offset_bottom = 474.0
+scale = Vector2(4, 4)
+value = 100.0
+fill_mode = 5
+texture_progress = ExtResource("7_it00o")
+
+[node name="BufWheel4" type="TextureProgressBar" parent="CanvasLayer" unique_id=363412066]
+offset_left = 945.0
+offset_top = 450.0
+offset_right = 969.0
+offset_bottom = 474.0
+scale = Vector2(4, 4)
+value = 50.0
+fill_mode = 3
+texture_progress = ExtResource("8_8h55f")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
