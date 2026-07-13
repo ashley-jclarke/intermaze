@@ -1,8 +1,24 @@
 # Intermaze
 
-Intermaze is a game based on a puzzle I designed. T
-he game has online multiplayer and uses hole punching to start a host server.
+Intermaze is a game based on a puzzle I designed. 
+The game has online multiplayer and uses hole punching to start a host server.
 The game can also be hosted localy with a keyboard user and a controller user.
+
+## Controls
+
+WASD - Move
+Shift - Dash
+Space - Open Map
+F - Use item at top of pocket
+E - Pickup item from top of chest
+
+# How it started
+
+The mock exams for A level computer science are not shortened down. They are 2h30m and everyone finishes in 1h30m leaving an hour to check your work. It does not take this long and often leaves us incredibly bored and the rest of the exam feels like a punishment for picking the subject. It's not like misusing this extra time was affecting our grades either as most of us were getting A's or A*'s. 
+
+So during one of these overly long winded exams I decided to make a game for myself that I could play on paper. I made an algorithm that would turn directions into numbers in their own cells resulting in a sort of encrypted version of the path I took. Then after doing so for long enough that I forgot the path I went on, I would try to decrypt this path. I was playing a bit of Cult of the lamb during these times so I decided to turn this puzzle into a game where each cell on the map had a PvE challenge that you must clear before going to the next room. The combat system is heavily inspired by cult of the lamb. First I made it into a [pygame program](https://github.com/ashley-jclarke/sum-puzzle) without all the game components but I wanted to play it with friends and have fun so I then turned it into a multiplayer game!
+
+# Detailed
 
 <img width="1152" height="648" alt="image" src="https://github.com/user-attachments/assets/75833989-310b-46f2-9e6d-4331542007b5" />
 <img width="1152" height="648" alt="image" src="https://github.com/user-attachments/assets/130772a7-4ead-4fd9-92a5-41c557b58c07" />
@@ -27,7 +43,12 @@ Speed potion increases your speed.
 
 Clue rooms will show you what the current value your path is. This can be used to check your route or to get a bearings of where you are. They come at a price as they only reveal after you clear all the enemies in a boss room.
 
-<img width="1152" height="648" alt="image" src="https://github.com/user-attachments/assets/f47e8c5d-1bc3-4c7a-baf7-eea4a5b06399" />
+<img width="800" height="450" alt="2026-07-1306-54-26-ezgif com-video-to-gif-converter" src="https://github.com/user-attachments/assets/82c4d2a9-b4b7-443e-8d14-b6bb9e6ff040" />
+
+A friend said the puzzle was too hard to follow so I added error checking and the room you're currently in would flash.
+
+<img width="800" height="450" alt="2026-07-1306-54-261-ezgif com-video-to-gif-converter" src="https://github.com/user-attachments/assets/852d1449-71e6-4fae-947f-d2c46139bf4d" />
+
 
 # The puzzle
 
